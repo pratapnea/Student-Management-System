@@ -14,27 +14,33 @@
 		<div class="row">
 			<h1> List Students </h1>
 		</div>
-		<table class="table table-success table-striped table-hover">
-			<thead class="table-dark">
-				<tr>
-					<th scope="col">ID</th>
-					<th scope="col">First Name</th>
-					<th scope="col">Last Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each = "student: ${students}">
-					<th scope="row" th:text = "${student.id}"></th>
-					<td th:text = "${student.firstName}"></td>
-					<td th:text = "${student.lastName}"></td>
-					<td th:text = "${student.email}"></td>
-				</tr>
+		<div class="row">
+			<div class="col-lg-3">
+				<a class="btn btn-primary btn-sm mb3" th:href="@{/students/new}"> Add Student </a>
 
-			</tbody>
-		</table>
-		</table>
+			</div>
+		</div>
+		<div >
+			<table class="table table-success table-striped table-hover">
+				<thead class="table-dark">
+					<tr>
+						<th scope="col">First Name</th>
+						<th scope="col">Last Name</th>
+						<th scope="col">Email</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="student: ${students}">
+						<td th:text="${student.firstName}"></td>
+						<td th:text="${student.lastName}"></td>
+						<td th:text="${student.email}"></td>
+					</tr>
+
+				</tbody>
+			</table>
+			</table>
+		</div>
 	</div>
 
 </body>
