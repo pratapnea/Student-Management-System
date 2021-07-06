@@ -30,10 +30,10 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
 				<h1 class="text-center">
-					Add New Student
+					Update Student
 				</h1>
 				<div class="card-body">
-					<form th:action="@{/students}" th:object="${student}" method="POST">
+					<form th:action="@{/students/{id} (id=${student.id})}" th:object="${student}" method="POST">
 						<div class="form-group">
 							<label>First Name</label>
 							<input class="form-control" type="text" name="firstName" th:field="*{firstName}"
@@ -51,9 +51,9 @@
 							<input class="form-control" type="email" name="email" th:field="*{email}"
 								placeholder="Enter email" />
 						</div>
-
+						<br>
 						<div class="box-footer">
-							<button type="submit" class="btn btn-primary">Create</button>
+							<button type="submit" class="btn btn-primary">Update</button>
 						</div>
 
 					</form>
