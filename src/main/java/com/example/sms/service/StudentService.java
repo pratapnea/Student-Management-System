@@ -1,5 +1,9 @@
 package com.example.sms.service;
 
-public interface StudentService {
+import java.util.List;
 
+import com.example.sms.entity.Student;
+
+public interface StudentService {
+	List<Student> getAllStudents();
 }
