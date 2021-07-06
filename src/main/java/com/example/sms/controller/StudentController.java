@@ -3,7 +3,6 @@ package com.example.sms.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.sms.service.StudentService;
 
@@ -19,7 +18,7 @@ public class StudentController {
 	
 	
 //	List all students
-	@GetMapping(name = "/students")
+	@GetMapping("/students")
 	public String listStudents(Model model) {
 		model.addAttribute("students", studentService.getAllStudents());
 		return "students";
